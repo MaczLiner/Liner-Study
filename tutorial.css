@@ -1,0 +1,196 @@
+/* Reset e Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Vídeo de Fundo */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Container Principal */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+/* Cabeçalho */
+.page-header {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #e74a98;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+/* Botão Voltar */
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, 
+        #ff0000, #ff7700, #ffdd00, 
+        #00ff00, #0088ff, #0000ff, 
+        #ff00ff, #ff0000);
+    background-size: 400% 400%;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    animation: rainbow 8s linear infinite;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.back-button:hover {
+    animation: rainbow 2s linear infinite;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Galeria de Vídeos */
+.video-gallery {
+    display: grid;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 700px;
+    margin: 10px;
+}
+
+.video-card {
+    background: rgba(30, 30, 30, 0.85);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-info {
+    padding: 15px;
+}
+
+.video-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: #e74a98;
+}
+
+.video-info p {
+    color: #ddd;
+    font-size: 0.95rem;
+}
+
+/* Rodapé */
+.page-footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 15px;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+        margin-top: 50px;
+    }
+    
+    .video-gallery {
+        gap: 30px;
+    }
+    
+    .back-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .video-info h3 {
+        font-size: 1.1rem;
+    }
+}
