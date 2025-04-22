@@ -178,7 +178,165 @@ footer img {
 }
 
 #myvideo {
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 120vh; /* maior que a tela pra ter espaço pra mover */
+    object-fit: cover;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
 }
+
+/* Contador */
+.countdown {
+    text-align: center;
+    font-size: 18px;
+    color: aliceblue;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;  
+}
+
+/* Checkbox + texto */
+.task-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Estilo da caixa de seleção */
+.task-item input[type="checkbox"] {
+    margin-top: 8px;
+    transform: scale(1.6); /* Aumenta o tamanho da caixa de seleção */
+    accent-color: rgb(27, 233, 44);
+    transition: transform 0.3s ease;
+}
+
+/* Animação de conclusão de tarefa - para o título */
+.task-item input[type="checkbox"]:checked + div h4 {
+    animation: titleComplete 0.5s ease-in-out; /* Animação de conclusão para o título */
+    color: #888; /* Cor mais clara para o título */
+}
+
+/* Animação de conclusão de título */
+@keyframes titleComplete {
+    0% {
+        transform: scale(1); /* Tamanho inicial */
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.1); /* Título levemente maior para destacar */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1); /* Retorna ao tamanho original */
+        opacity: 1;
+    }
+}
+
+/* Animação de conclusão de tarefa - para o texto de descrição */
+.task-item input[type="checkbox"]:checked + div p {
+    animation: taskComplete 0.5s ease-in-out; /* Animação de conclusão para o texto */
+    text-decoration: line-through; /* Risco no texto */
+    color: #888; /* Cor mais clara */
+}
+
+/* Animação para a caixa de seleção */
+.task-item input[type="checkbox"]:checked {
+    transform: scale(1.4);  /* Tamanho aumentado */
+    transition: transform 0.3s ease; /* Suaviza a transformação */
+}
+
+/* Animação de quando a tarefa é marcada como concluída */
+@keyframes taskComplete {
+    0% {
+        transform: scale(1); /* Tamanho inicial */
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.05); /* Tamanho aumentado */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1); /* Retorna ao tamanho original */
+        opacity: 1;
+    }
+}
+
+/* Aplica a animação quando a tarefa é marcada */
+.task-item input[type="checkbox"]:checked + div {
+    animation: increaseTextSize 0.4s ease; /* Animação rápida */
+}
+
+
+/* Animação de Fade Out quando a tarefa é desmarcada */
+@keyframes fadeOutUnchecked {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Aplica a animação de Fade Out quando a caixa é desmarcada (unchecked) */
+.task-item input[type="checkbox"]:not(:checked) + div {
+    animation: fadeOutUnchecked 0.5s ease-out;
+}
+
+
+/* Barra de progresso */
+
+#progress-bar {
+    position: relative;
+    width: 80%;
+    height: 20px;
+    background-color: #34495e;
+    border-radius: 10px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+/* Cores da barra de progresso */
+
+#progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8e44ad, #e91e63);
+    transition: width 0.5s ease-in-out;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    height: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Data exibir */
+
+.completion-info {
+    color: #2ecc71;
+    font-weight: bold;
+    margin-top: 10px;
+} 
+
+/*dispositivos móveis display */
+
+@media (max-width: 768px) {
+    .intro-content {
+      margin-left: 20px;
+      align-items: center;
+    }
+  
+    header img {
+      width: 180px;
+    }
+  }

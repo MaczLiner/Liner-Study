@@ -1,0 +1,22 @@
+{
+    "exercises": [
+      { "id": "task1", "title": "1 - SOMA SIMPLES", "description": "Peça dois números ao usuário e exiba a soma." },
+      { "id": "task2", "title": "2 - MÉDIA ARITMÉTICA", "description": "Calcule a média de 3 notas digitadas pelo usuário." },
+      { "id": "task3", "title": "3 - FAÇA UMA CALCULADORA", "description": "Utilize os operadores + - * /" },
+      { "id": "task4", "title": "4 - Olá Mundo", "description": "Crie um programa que exiba a mensagem 'Olá, Mundo!' na tela." },
+      { "id": "task5", "title": "5 - Subtração de Dois Números", "description": "Peça ao usuário para digitar dois números e exiba a diferença entre o primeiro e o segundo." },
+      { "id": "task6", "title": "6 - Multiplicação de Dois Números", "description": "Peça ao usuário para digitar dois números e exiba o resultado da multiplicação deles." },
+      { "id": "task7", "title": "7 - Divisão de Dois Números", "description": "Peça ao usuário para digitar dois números e exiba o resultado da divisão do primeiro pelo segundo." },
+      { "id": "task8", "title": "8 - Verificação de Paridade", "description": "Peça ao usuário para digitar um número e verifique se ele é par ou ímpar." },
+      { "id": "task9", "title": "9 - Maior de Dois Números", "description": "Peça ao usuário para digitar dois números e exiba o maior deles." },
+      { "id": "task10", "title": "10 - Calculando o Fatorial", "description": "Peça ao usuário para digitar um número e exiba o fatorial desse número." },
+      { "id": "task11", "title": "11 - Tabela de Multiplicação", "description": "Peça ao usuário para digitar um número e exiba a tabela de multiplicação desse número de 1 a 10." },
+      { "id": "task12", "title": "12 - Contagem Regressiva", "description": "Exiba uma contagem regressiva de 10 a 1." },
+      { "id": "task13", "title": "13 - Calculando a Potência", "description": "Peça ao usuário para digitar dois números e exiba o resultado da potência do primeiro número elevado ao segundo." },
+      { "id": "task14", "title": "14 - Ordenação de Três Números", "description": "Peça ao usuário para digitar três números e exiba-os em ordem crescente." },
+      { "id": "task15", "title": "15 - Calculando o IMC", "description": "Peça ao usuário para digitar seu peso e altura, e calcule o IMC usando: peso / (altura * altura)." },
+      { "id": "task16", "title": "16 - Tabuada Invertida", "description": "Peça ao usuário para digitar um número e exiba sua tabuada de 10 até 1." },
+      { "id": "task17", "title": "17 - Par ou Ímpar com While", "description": "Crie um loop que pergunte ao usuário se ele quer digitar um número. Se sim, verifique se é par ou ímpar, e repita até ele parar." }
+    ]
+  }
+  

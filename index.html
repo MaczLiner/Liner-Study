@@ -1,86 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Configuração básica da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liner Study</title>
+
+    <!-- Estilo da página -->
     <link rel="stylesheet" href="index.css">
+
+    <!-- Ícones do site -->
     <link rel="icon" href="img/site icon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="img/site icon.png">
 </head>
+
 <body>
+    <!-- Isso aqui é o vídeo de fundo -->
     <div class="video-background">
         <video autoplay muted loop id="myvideo">
-          <source src="img/girl steam.mp4" type="video/mp4">
+            <source src="img/girl steam.mp4" type="video/mp4">
         </video>
     </div>
-  <!-- principal -->
+
+    <!-- Isso aqui é o menu de navegação -->
     <nav>
         <ul>
             <li><a href="index.html">Liner Study</a></li>
         </ul>
     </nav>
 
-    <!-- inicial imagem -->
+    <!-- Isso aqui é a imagem principal no topo da página -->
     <header>
         <div class="center">
             <img src="img/Girl study.gif" alt="Estudo da garota">
         </div>
     </header>
 
+    <!-- Aqui começa a introdução com links úteis -->
     <section class="intro">
         <h1>Quer começar a programar sem saber como?</h1>
         <div class="intro-content">
             <img src="img/anime study.gif" alt="Anime Study">
+
+            <!-- Links para tutorial, site de testes e programas -->
             <a href="tutorial.html" class="sub-item">Tutorial Básico📖</a><br>
             <a href="https://www.onlinegdb.com/online_c_compiler" class="sub-item">Site para testar sua programação📃</a><br>
             <a href="https://drive.google.com/file/d/1S1Z2sRoK39qlaKIFb9VD8V-qnphmCmxy/view?usp=sharing" class="sub-item">Programas para iniciantes💻</a><br>
         </div>
     </section>
 
-    <!-- Tarefas -->
+    <!-- Título para a parte de tarefas -->
     <section>
         <h2>Tarefas simples para começar bem 📝</h2>
     </section>
 
     <main>
+        <!-- Título para a lista de exercícios -->
         <section>
-            <h6 class="rainbow-text">#EXERCÍCIOS#</h6>
+            <h6 class="rainbow-text">❗EXERCÍCIOS❗</h6>
         </section>
 
-        <!-- Exercício 1 -->
-        <section class="container">
-            <h4>1 - SOMA SIMPLES</h4>
-            <p>Peça dois números ao usuário e exiba a soma.</p>
-        </section>
+        <!-- Isso aqui é o cronômetro que mostra quando os exercícios vão mudar -->
+        <div id="timer" class="countdown">
+            ⏳ Próximas tarefas em: <span id="countdown"></span>
+        </div>
+        
+        <!-- Isso aqui é a barra de progresso dos exercícios -->
+        <div id="progress-bar">
+            <div id="progress-fill"></div>
+            <span class="progress-text">0%</span>
+        </div>
 
-        <!-- Exercício 2 -->
-        <section class="container">
-            <h4>2 - MÉDIA ARITMÉTICA</h4>
-            <p>Calcule a média de 3 notas digitadas pelo usuário.</p>
-        </section>
+        <button onclick="resetProgress()">Resetar Progresso</button>
+        
+        <!-- Isso aqui mostra a data da última vez que as tarefas foram concluídas -->
+        <p id="last-completed" class="completion-info"></p>
 
-        <!-- Exercício 3 -->
-        <section class="container">
-            <h4>3 - FAÇA UMA CALCULADORA</h4>
-            <p>Utilize os operadores + - * /</p>
-        </section>
+        <!-- Aqui os exercícios vão aparecer (o conteúdo vem de um script) -->
+        <section id="exercise-list"></section>
     </main>
 
-    <!-- links -->
+    <!-- Rodapé com links para redes sociais -->
     <footer>
         <a href="https://www.youtube.com/@maczliner/videos" target="_blank" rel="noopener noreferrer">
             <img src="./img/youtube.svg" alt="YouTube">
             <p>Youtube</p>
         </a>
-    </footer>
-
-    <footer>
         <a href="https://discord.gg/jgEw6A2N" target="_blank" rel="noopener noreferrer">
             <img src="./img/discord.png" alt="Discord">
             <p>Discord</p>
-        </a>
+        </a>       
     </footer>
 
+    <!-- Isso aqui é o script principal do site -->
+    <script src="script.js"></script>
+
+    <!-- Esse script faz o vídeo de fundo se mover conforme você rola a página (efeito parallax leve) -->
+    <script>
+        const video = document.getElementById("myvideo");
+
+        window.addEventListener("scroll", () => {
+            const scrollY = window.scrollY;
+            const offset = scrollY * 0.2; // quanto mais alto o número, mais sensível fica
+            video.style.transform = `translateY(-${offset}px)`;
+        });
+    </script>
 </body>
 </html>
