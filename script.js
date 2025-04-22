@@ -14,7 +14,7 @@ if (!localStorage.getItem('startTimestamp')) {
 // Função que atualiza o cronômetro na tela
 function updateCountdown() {
     const countdown = document.getElementById('countdown');
-    const startTimestamp = parseInt(localStorage.getItem('startTimestamp')) || Date.now();
+    let startTimestamp = parseInt(localStorage.getItem('startTimestamp')) || Date.now();
     const endTime = startTimestamp + intervalTime; // Data de término (3 dias após o início)
     const now = Date.now();
     const remaining = endTime - now; // Tempo restante
@@ -22,6 +22,13 @@ function updateCountdown() {
     if (remaining <= 0) {
         // Se o tempo acabou, exibe aviso
         countdown.textContent = "🚨 Novos exercícios disponíveis!";
+        // Atualiza o índice dos exercícios e reinicia o ciclo de 3 dias
+        updateExerciseIndex();
+        localStorage.setItem('startTimestamp', Date.now());
+
+        // Renderiza os novos exercícios e atualiza progresso
+        renderExercises();
+        updateProgress();
         return;
     }
 
