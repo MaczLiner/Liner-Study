@@ -163,12 +163,27 @@ function showLastCompletedDate() {
 
 // Reseta o progresso (desmarca os checkboxes visíveis)
 function resetProgress() {
-    // Remove o estado salvo dos exercícios visíveis
-    exercises.slice(exerciseIndex, exerciseIndex + 3).forEach(ex => {
-        localStorage.removeItem(ex.id);
-    });
+    const modal = document.getElementById("confirmModal");
+    modal.classList.remove("hidden");
 
-    // Re-renderiza os exercícios e atualiza a barra de progresso
-    renderExercises();
-    updateProgress();
+    // Botão "Sim, resetar"
+    document.getElementById("confirmReset").onclick = () => {
+        // Executa o reset de verdade
+        exercises.slice(exerciseIndex, exerciseIndex + 3).forEach(ex => {
+            localStorage.removeItem(ex.id);
+        });
+
+        localStorage.removeItem('lastcompleted');
+        document.getElementById('last-completed').innerText = ""; // <- limpa o texto de finalizado dia tal.
+
+        renderExercises();
+        updateProgress();
+        modal.classList.add("hidden");
+    };
+
+    // Botão "Cancelar"
+    document.getElementById("cancelReset").onclick = () => {
+        modal.classList.add("hidden");
+    };
 }
+
