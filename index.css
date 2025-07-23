@@ -177,6 +177,21 @@ footer img {
     overflow: hidden;
 }
 
+.video-transition {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#myvideo-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    transition: opacity 0.8s ease-in-out;
+}
+
 #myvideo {
     position: absolute;
     top: 0;

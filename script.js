@@ -187,3 +187,63 @@ function resetProgress() {
     };
 }
 
+    // === TROCA DINÂMICA DE VÍDEO PELO HORÁRIO ===
+    let videoAtual = null;
+
+
+    function escolherVideoPorHorario() {
+        const hora = new Date().getHours();
+        const videoContainer = document.getElementById('myvideo-container');
+
+        // Decide qual vídeo usar com base na hora
+
+        let src;
+        if (hora >= 7 && hora < 20) {
+            // Horário diurno: 07h - 19h59
+            src = "img/girl steam.mp4";
+        } else {
+            // Horário Nortuno: 20h - 06h59
+            src="img/girl steam night.mp4";
+        }
+        
+        // Só troca se o vídeo for diferente do atual
+        if (src !== videoAtual) {
+           videoAtual = src;
+
+           const videoAtualElemento = document.querySelector('#myvideo-container video');
+           if (videoAtualElemento) {
+            // Fade out o vídeo atual
+           videoContainer.style.transition = 'opacity 0.8s ease-in-out';
+           videoContainer.style.opacity = 0;
+
+           setTimeout(() => {
+            // Troca o vídeo durante o fade-out
+           videoContainer.innerHTML = `
+              <video autoplay muted loop id="myvideo">
+                <source src="${src}" type="video/mp4">
+              </video>
+           `;
+
+           // Espera o navegador preparar o novo vídeo antes do fade-in
+           const novoVideo = videoContainer.querySelector('video');
+           novoVideo.addEventListener('loadeddata', () => {
+            videoContainer.style.opacity = 1; // Fade-in
+           });
+
+        },800); // Tempo do fade-out
+     } else {
+        // Se não existir vídeo (primeira cvez), só cria direto com opacidade 1
+        videoContainer.innerHTML = `
+        <video autoplay muted loop id="myvideo" style="opacity:1; transition: opacity 0.8s ease-in-out.">
+        <source src="${src}" type="video/mp4">
+        `;
+    }
+  }
+
+}
+
+    // Chama a função imediatamente ao carregar
+    escolherVideoPorHorario();
+
+    // Verifica a cada 5 minutos (300.000 ms)
+    setInterval(escolherVideoPorHorario, 300000);

@@ -17,11 +17,7 @@
 
 <body>
     <!-- Isso aqui é o vídeo de fundo -->
-    <div class="video-background">
-        <video autoplay muted loop id="myvideo">
-            <source src="img/girl steam.mp4" type="video/mp4">
-        </video>
-    </div>
+    <div class="video-background" id="myvideo-container"></div>
 
     <!-- Isso aqui é o menu de navegação -->
     <nav>
@@ -41,7 +37,7 @@
     <section class="intro">
         <h1>Quer começar a programar sem saber como?</h1>
         <div class="intro-content">
-            <img src="img/anime study.gif" alt="Anime Study">
+            <img src="img/Boy study.gif" alt="Anime Study">
 
             <!-- Links para tutorial, site de testes e programas -->
             <a href="tutorial.html" class="sub-item">Tutorial Básico📖</a><br>
@@ -52,7 +48,7 @@
 
     <!-- Título para a parte de tarefas -->
     <section>
-        <h2>Tarefas simples para começar bem 📝</h2>
+        <h2>Tarefas simples para começar 📝</h2>
     </section>
 
     <main>
@@ -106,6 +102,8 @@
             video.style.transform = `translateY(-${offset}px)`;
         });
     </script>
+
+    <!-- Modal Confirm Reset-->
 
     <div id="confirmModal" class="modal hidden">
   <div class="modal-content">
