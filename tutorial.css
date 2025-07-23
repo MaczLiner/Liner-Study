@@ -11,7 +11,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Vídeo de Fundo */
 .video-background {
     position: fixed;
     top: 0;
@@ -27,7 +26,7 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 120vh; /* maior que a tela pra ter espaço pra mover */
+    height: 120vh; 
     object-fit: cover;
     transition: transform 0.1s ease-out;
     will-change: transform;
@@ -42,7 +41,6 @@ body {
     background: rgba(0, 0, 0, 0.7);
 }
 
-/* Container Principal */
 .main-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -50,7 +48,6 @@ body {
     position: relative;
 }
 
-/* Cabeçalho */
 .page-header {
     text-align: center;
     padding: 20px 0;
@@ -70,7 +67,6 @@ body {
     color: #ccc;
 }
 
-/* Botão Voltar */
 .back-button {
     position: absolute;
     left: 20px;
@@ -102,7 +98,6 @@ body {
     100% { background-position: 100% 50%; }
 }
 
-/* Galeria de Vídeos */
 .video-gallery {
     display: grid;
     flex-direction: column;
@@ -127,7 +122,7 @@ body {
 
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
 }
@@ -156,7 +151,6 @@ body {
     font-size: 0.95rem;
 }
 
-/* Rodapé */
 .page-footer {
     text-align: center;
     padding: 30px 0;
@@ -164,7 +158,6 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .main-container {
         padding: 15px;
